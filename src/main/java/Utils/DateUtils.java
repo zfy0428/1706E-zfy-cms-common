@@ -7,7 +7,7 @@ import java.util.Date;
 public class DateUtils {
 	
 	public static void main(String[] args) {
-		//ÐÞ¸Ä
+		
 		Date birth = new Date(100, 0, 6);
 		int age = calAge(birth);
 		System.out.println("age is " + age);
