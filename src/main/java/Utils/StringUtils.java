@@ -13,6 +13,18 @@ import java.util.regex.Pattern;
  *
  */
 public class StringUtils {
+	public static char cs[] = new char[37];
+	//初始化数组
+	static{
+		int index=0;
+		cs[(int)index ++]=' ';
+		for (char i = 'a'; i <= 'z'; i++) {
+			cs[(int)index ++]=i;
+		}
+		for (char i = 0; i < cs.length; i++) {
+			cs[(int)index ++]=i;
+		}
+	}
 
 	/**
 	 *  
@@ -265,6 +277,16 @@ public class StringUtils {
 			sb.append("<p>").append(string).append("</p>\n");
 		}
 		return sb.toString();	
+	}
+	
+	//随机生成字母数字
+	public static String randomCharAndNumber(int n) {
+		StringBuffer sb = new StringBuffer();
+		Random random = new Random();
+		for (int j = 0; j < n; j++) {
+			sb.append(cs[random.nextInt(36)]);
+		}
+		return sb.toString();
 	}
 	
 }
